@@ -1,1 +1,0 @@
-# wordle-react-clone
