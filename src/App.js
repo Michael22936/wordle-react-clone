@@ -6,6 +6,8 @@ function App() {
 		<nav>
 			<h1>Wordle</h1>
 		</nav>
+		<Board />
+		<Keyboard />
 	</div>
   );
 }
