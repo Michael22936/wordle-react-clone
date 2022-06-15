@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Letter({letterPos, attemptVal}) {
+function Letter({ letterPos, attemptVal }) {
   return (
     <div>Letter</div>
   )
