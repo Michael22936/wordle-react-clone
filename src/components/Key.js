@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Key() {
+function Key({keyVal}) {
   return (
     <div>Key</div>
   )
