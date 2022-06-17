@@ -15,12 +15,12 @@ function Keyboard() {
         })}
       </div>
       <div className="line2">
-      {keys2.map((key) => {
+        {keys2.map((key) => {
           return <div> {key} </div>
         })}
       </div>
       <div className="line3">
-      {keys3.map((key) => {
+        {keys3.map((key) => {
           return <div> {key} </div>
         })}
       </div>
