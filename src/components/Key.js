@@ -4,13 +4,14 @@ import { AppContext } from '../App';
 
 function Key({ keyVal, bigKey }) {
 
-  const { board, setBoard, currAttempt } = useContext(AppContext);
+  const { board, setBoard, currAttempt, setCurrAttempt } = useContext(AppContext);
 
 
   const selectLetter = () => {
     const newBoard = [...board]
     newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal
     setBoard(newBoard)
+    setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos + 1})
   }
 
   return (
