@@ -4,7 +4,7 @@ import { AppContext } from '../App';
 
 function Key({ keyVal, bigKey }) {
 
-  const { board, setBoard, currAttempt, setCurrAttempt, onDelete, onEnter, onSelectLetter } = useContext(AppContext);
+  const { onDelete, onEnter, onSelectLetter } = useContext(AppContext);
 
 
   const selectLetter = () => {
