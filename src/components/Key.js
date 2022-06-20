@@ -8,10 +8,16 @@ function Key({ keyVal, bigKey }) {
 
 
   const selectLetter = () => {
+    if (keyVal === "ENTER"){
+
+    } else {
+      if (currAttempt.letterPos > 4) return;
     const newBoard = [...board]
     newBoard[currAttempt.attempt][currAttempt.letterPos] = keyVal
     setBoard(newBoard)
     setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos + 1})
+    }
+    
   }
 
   return (
