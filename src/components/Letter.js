@@ -3,7 +3,7 @@ import { AppContext } from '../App';
 
 function Letter({ letterPos, attemptVal }) {
 
-    const { board, correctWord } = useContext(AppContext);
+    const { board, correctWord, currAttempt } = useContext(AppContext);
 
     const letter = board[attemptVal][letterPos];
 
@@ -11,7 +11,7 @@ function Letter({ letterPos, attemptVal }) {
 
     const almost = !correct && letter !== "" && correctWord.includes(letter)
 
-    const letterState = correct ? "correct": almost ? "almost" : error
+    const letterState = currAttempt.attempt > attemptVal &&  (correct ? "correct": almost ? "almost" : "error");
 
   return (
     <div className="letter" id={letterState}> {letter} </div>
