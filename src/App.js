@@ -11,7 +11,7 @@ function App() {
 	const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
 	const [wordSet, setWordSet] = useState(new Set());
 	const [disabledLetters, setDisabledLetters] = useState([]);
-	const [gameOver, setGameOver] = useState();
+	const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
 
 	const correctWord = "RIGHT";
 
@@ -87,7 +87,9 @@ function App() {
 			onEnter, 
 			correctWord,
 			setDisabledLetters,
-			disabledLetters, 
+			disabledLetters,
+			gameOver,
+			setGameOver 
 			}}>
 			<div className="game">
 				<Board />
