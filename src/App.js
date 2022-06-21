@@ -76,7 +76,18 @@ function App() {
 		<nav>
 			<h1>Wordle</h1>
 		</nav>
-		<AppContext.Provider value={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, correctWord }}>
+		<AppContext.Provider value={{ 
+			board, 
+			setBoard, 
+			currAttempt, 
+			setCurrAttempt, 
+			onSelectLetter, 
+			onDelete, 
+			onEnter, 
+			correctWord,
+			setDisabledLetters,
+			disabledLetters, 
+			}}>
 			<div className="game">
 				<Board />
 				<Keyboard />
