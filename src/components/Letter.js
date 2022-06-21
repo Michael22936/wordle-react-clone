@@ -6,8 +6,7 @@ function Letter({ letterPos, attemptVal }) {
     const { 
       board, 
       correctWord, 
-      currAttempt, 
-      disabledLetters, 
+      currAttempt,  
       setDisabledLetters 
     } = useContext(AppContext);
 
@@ -23,7 +22,7 @@ function Letter({ letterPos, attemptVal }) {
     useEffect(() => {
       if (letter !== "" && !correct && !almost){
 
-        setDisabledLetters([...disabledLetters, letter]);
+        setDisabledLetters((prev) => [...prev, letter]);
 
       }
     }, [currAttempt.attempt])
