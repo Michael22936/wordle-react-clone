@@ -51,9 +51,13 @@ function App() {
 			currWord += board[currAttempt.attempt][i];
 		}
 
-		
+		if(wordSet.has(currWord.toLowerCase())) {
+			setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+		} else {
 
-        setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+			alert("Word not found");
+
+		}   
 	}
   return (
 	<div className="App">
