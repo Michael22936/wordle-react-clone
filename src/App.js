@@ -3,6 +3,7 @@ import Board from './components/Board'
 import  Keyboard  from './components/Keyboard';
 import {createContext, useEffect, useState} from 'react';
 import {boardDefault, generateWordSet} from './Words';
+import GameOver from './components/GameOver';
 
 export const AppContext = createContext();
 
@@ -58,7 +59,7 @@ function App() {
 
 		if(wordSet.has(currWord.toLowerCase())) {
 
-			setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0})
+			setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0});
 
 		} else {
 
@@ -68,9 +69,20 @@ function App() {
 		
 		if(currWord === correctWord) {
 
-			alert("YOU WIN!!!!");
+			setGameOver({gameOver: true, guessedWord: true});
+
+			return;
 
 		}
+
+		if (currAttempt.attempt === 5) {
+
+			setGameOver({gameOver: true, guessedWord: false});
+
+			return;
+
+		}
+
 	}
   return (
 	<div className="App">
@@ -93,7 +105,7 @@ function App() {
 			}}>
 			<div className="game">
 				<Board />
-				<Keyboard />
+				{gameOver.gameOver ? <GameOver /> : <Keyboard />}
 			</div>
 		</AppContext.Provider>
 	</div>
