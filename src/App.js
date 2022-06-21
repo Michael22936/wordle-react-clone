@@ -9,7 +9,8 @@ export const AppContext = createContext();
 function App() {
 	const [board, setBoard] = useState(boardDefault);
 	const [currAttempt, setCurrAttempt] = useState({ attempt: 0, letterPos: 0 });
-	const [wordSet, setWordSet] = useState(new Set())
+	const [wordSet, setWordSet] = useState(new Set());
+	const [disabledLetters, setDisabledLetters] = useState([]);
 
 	const correctWord = "RIGHT";
 
@@ -51,7 +52,7 @@ function App() {
 		for(let i = 0; i < 5; i++) {
 
 			currWord += board[currAttempt.attempt][i];
-			
+
 		}
 
 		if(wordSet.has(currWord.toLowerCase())) {
